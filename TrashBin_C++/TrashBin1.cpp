@@ -14,7 +14,7 @@ public:
 
     // 멤버 함수
     void honk() {
-        std::cout << "빵빵!" << std::endl;
+        std::cout << "Broom!" << std::endl;
     }
 };
 
