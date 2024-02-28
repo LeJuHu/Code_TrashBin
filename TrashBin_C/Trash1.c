@@ -1,3 +1,4 @@
+//매우 기초적인 학습용 코드 - 별피라미드
 #include <stdio.h>
 
 int main() {
