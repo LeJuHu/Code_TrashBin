@@ -1,3 +1,4 @@
+//이거 왜 오류안나지?
 using UnityEngine;
 
 public class GunController : MonoBehaviour
