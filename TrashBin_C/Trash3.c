@@ -1,47 +1,24 @@
 #include <Turboc.h>
-
- 
-
 #define LEFT 75
-
 #define RIGHT 77
-
 #define UP 72
-
 #define DOWN 80
-
 #define ESC 27
-
 #define BX 5
-
 #define BY 1
-
 #define BW 10
-
 #define BH 20
 
- 
-
 void DrawScreen();
-
 void DrawBoard();
-
 BOOL ProcessKey();
-
 void PrintBrick(BOOL Show);
-
 int GetAround(int x,int y,int b,int r);
-
 BOOL MoveDown();
-
 void TestFull();
 
- 
-
 struct Point {
-
      int x,y;
-
 };
 
 Point Shape[][4][4]={
@@ -62,132 +39,79 @@ Point Shape[][4][4]={
 
 };
 
- 
-
 enum { EMPTY, BRICK, WALL };
-
 char *arTile[]={". ","■","□"};
-
 int board[BW+2][BH+2];
-
 int nx,ny;
-
 int brick,rot;
 
- 
-
 void main()
-
 {
-
      int nFrame, nStay;
-
      int x,y;
 
- 
-
      setcursortype(NOCURSOR);
-
      randomize();
-
      clrscr();
 
      for (x=0;x<BW+2;x++) {
-
           for (y=0;y<BH+2;y++) {
-
               board[x][y] = (y==0 || y==BH+1 || x==0 || x==BW+1) ? WALL:EMPTY;
-
           }
-
      }
 
      DrawScreen();
 
      nFrame=20;
 
- 
-
      for (;1;) {
-
           brick=random(sizeof(Shape)/sizeof(Shape[0]));
-
           nx=BW/2;
-
           ny=3;
-
           rot=0;
-
           PrintBrick(TRUE);
 
- 
-
-          if (GetAround(nx,ny,brick,rot) != EMPTY) break;
+          if (GetAround(nx,ny,brick,rot) != EMPTY) 
+          break;
 
           nStay=nFrame;
 
           for (;2;) {
-
               if (--nStay == 0) {
-
                    nStay=nFrame;
-
-                   if (MoveDown()) break;
-
+                   if (MoveDown()) 
+                   break;
               }
 
-              if (ProcessKey()) break;
+              if (ProcessKey()) 
+              break;
 
               delay(1000/20);
-
           }
-
      }
 
      clrscr();
-
      gotoxy(30,12);puts("G A M E  O V E R");
-
      setcursortype(NORMALCURSOR);
-
 }
-
- 
 
 void DrawScreen()
-
 {
-
      int x,y;
 
- 
-
      for (x=0;x<BW+2;x++) {
-
           for (y=0;y<BH+2;y++) {
-
               gotoxy(BX+x*2,BY+y);
-
               puts(arTile[board[x][y]]);
-
           }
-
      }
 
- 
-
      gotoxy(50,3);puts("Tetris Ver 1.0");
-
      gotoxy(50,5);puts("좌우:이동, 위:회전, 아래:내림");
-
      gotoxy(50,6);puts("공백:전부 내림");
-
 }
 
- 
-
 void DrawBoard()
-
 {
 
      int x,y;
