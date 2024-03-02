@@ -1,4 +1,7 @@
-#include <Turboc.h>
+// 테트리스_Made with C
+
+#include <Turboc.h> // Windows & Linux 에서 실행 가능합니다
+
 #define LEFT 75
 #define RIGHT 77
 #define UP 72
