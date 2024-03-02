@@ -1,3 +1,4 @@
+// Trash2.html과 연동
 <script>
     // D-Day 날짜 설정 (예: 2022년 1월 1일)
     const setDate = new Date("2022-01-01T00:00:00+0900");
