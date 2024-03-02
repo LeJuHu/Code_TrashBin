@@ -11,7 +11,7 @@ def divide(x, y):
     if y != 0:
         return x / y
     else:
-        return "Error: Cannot divide by zero."
+        return "Error: '0'으로 나눌 수 없습니다."
 
 print("계산기를 시작합니다.")
 print("사용 가능한 연산: +, -, *, /")
