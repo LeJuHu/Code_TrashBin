@@ -1,4 +1,4 @@
-//이거 왜 오류안나지?
+//유니티시절 만든 간단한 2D플랫폼 총알발사 스크립트
 using UnityEngine;
 
 public class GunController : MonoBehaviour
