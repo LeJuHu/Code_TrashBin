@@ -1,0 +1,40 @@
+[ 깃/깃허브 기본 사용법 정리 ]
+
+git init (맨처음시작할때 한번 써주기?)
+git add . (다 추가하기 / 특정파일만 쓸 수 도 있음 ex - Index.html)
+git status (add로 추가한거 확인하기)
+git commit -m "first commit" (히스토리 추가하기)
+git branch -M main (머하는건지 모르겠음)
+git remote add origin https://github.com/LeJuHu/Githubtest.git (연결시키는거 / 이름만 바꿔서 사용하면 됨)
+git remote add -v (연결확인)
+git push origin master (마스터 브랜치로 코드를 보낸다)
+
+아무튼 처음 업로드 이후에 업데이트 하기위해선
+1. git add . (추가할 파일 더하기)
+2. git commit -m "first commit" (히스토리 만들기)
+3. git push origin master (Github로 올리기)
+
+
+[ Github로 팀프로젝트 하는법 ]
+
+1. Github에서 소스코드 다운로드 
+git clone 주소 폴더이름
+- 주소는 깃허브에서 들고와야함
+- 폴더 이름은 선택사항이다 (즉 없어도 됨) 폴더 이름을 줄 경우에는 그 폴더가 새로 생성이 되면서 그 안에
+  코드들이 다운로드가 되고, 폴더이름을 안줄경우엔 깃허브 프로젝트 이름으로 폴더가 자동으로 생기고 그 안에
+  코드들이 다운로드 된다.
+
+2. Github에서 내 브렌치 만들기
+git checkout -b 브렌치이름
+
+3. 내 브렌치에 소스코드 업데이트하기
+git add . 
+git commit -m "first commit"
+git push origin 브렌치이름
+
+4. 마스터 브렌치에 소스 가져오기(pull)
+git pull origin master
+- pull을 하기전에는 기존에 소스코드들을 commit을 먼저 해놔야 한다.
+
+5. 브렌치끼리 이동하는 법
+git checkout 브렌치 이름
