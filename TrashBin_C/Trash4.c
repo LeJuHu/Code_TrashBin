@@ -20,100 +20,79 @@ enum tag_Dir { LEFT=75, RIGHT=77, UP=72, DOWN=80 };
 tag_Dir dir;
 int life;
 int maxnumber;
-
 int speed;
-
 int multi;
-
 int stage;
-
  
-
 void main()
-
 {
-
      int number;
-
      int ch;
-
      int x,y;
 
- 
-
      life=5;
-
      randomize();
-
      setcursortype(NOCURSOR);
 
      for (;;) {
+        InitStage(stage);
+        gotoxy(0,23);printf("스테이지 : %d",stage+1);
+        gotoxy(20,23);printf("남은 뱀 : %d",life);
+        for (number=0;number<maxnumber;number++) 
+        {
+            gotoxy(40,23);printf("남은 먹이 : %d ",maxnumber-number);
+            gotoxy(60,23);printf("꼬리 길이 : 2 ");
+            // 공백인 자리에 새로운 숫자를 생성한다.
 
-          InitStage(stage);
+            do {
+                x=random(80);
+                y=random(22);
+            } 
+                while (getchcon(x,y) != ' ');
 
-          gotoxy(0,23);printf("스테이지 : %d",stage+1);
+                gotoxy(x,y);printf("%d",random(9)+1);
 
-          gotoxy(20,23);printf("남은 뱀 : %d",life);
 
-          for (number=0;number<maxnumber;number++) {
 
-              gotoxy(40,23);printf("남은 먹이 : %d ",maxnumber-number);
+                // 게임 시작 직후이면 잠시 대기하며 스테이지 조정 기회를 준다
 
-              gotoxy(60,23);printf("꼬리 길이 : 2 ");
+                if (number == 0) {
 
-              // 공백인 자리에 새로운 숫자를 생성한다.
+                    ch=getch();
 
-               do {
-
-                   x=random(80);
-
-                   y=random(22);
-
-              } while (getchcon(x,y) != ' ');
-
-              gotoxy(x,y);printf("%d",random(9)+1);
-
- 
-
-              // 게임 시작 직후이면 잠시 대기하며 스테이지 조정 기회를 준다
-
-              if (number == 0) {
-
-                   ch=getch();
-
-                   if (ch == 0xE0) {
+                    if (ch == 0xE0) {
 
                         getch();
 
-                   } else {
+                    } else {
 
                         if (ch == 27) {
 
-                             setcursortype(NORMALCURSOR);
+                                setcursortype(NORMALCURSOR);
 
-                             exit(0);
+                                exit(0);
 
                         }
 
                         if (tolower(ch) == 'n') {
 
-                             stage = (stage == 4 ? 0:stage+1);
+                                stage = (stage == 4 ? 0:stage+1);
 
-                             break;
+                                break;
 
                         }
 
                         if (tolower(ch) == 'p') {
 
-                             stage = (stage == 0 ? 4:stage-1);
+                                stage = (stage == 0 ? 4:stage-1);
 
-                             break;
+                                break;
 
                         }
 
-                   }
+                    }
 
-              }
+                }
 
  
 
