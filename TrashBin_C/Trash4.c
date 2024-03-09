@@ -57,65 +57,41 @@ void main()
                 // 게임 시작 직후이면 잠시 대기하며 스테이지 조정 기회를 준다
 
                 if (number == 0) {
-
                     ch=getch();
-
                     if (ch == 0xE0) {
-
                         getch();
-
                     } else {
 
                         if (ch == 27) {
-
                                 setcursortype(NORMALCURSOR);
-
                                 exit(0);
-
                         }
 
                         if (tolower(ch) == 'n') {
-
                                 stage = (stage == 4 ? 0:stage+1);
-
                                 break;
-
                         }
 
                         if (tolower(ch) == 'p') {
-
                                 stage = (stage == 0 ? 4:stage-1);
-
                                 break;
-
                         }
-
                     }
-
                 }
-
- 
 
               // 뱀 이동 루프
 
               if (MoveSnake()==TRUE) {
 
                    if (--life == 0) {
-
                         gotoxy(12,20);
-
                         puts("게임이 끝났습니다. 그만 놀고 열심히 공부하세요.");
-
                         return;
-
                    }
 
                    delay(1500);
-
                    break;
-
               }
-
           }
 
           if (number == maxnumber) {
