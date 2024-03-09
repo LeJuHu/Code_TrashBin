@@ -1,43 +1,24 @@
+//Snake게임 가져와봄
 #include <Turboc.h>
-
- 
-
 #define QS 1600
-
 #define putchxy(x,y,ch) { gotoxy(x,y);putch(ch); }
-
 void InitStage(int stage);
-
 BOOL MoveSnake();
-
 void ProcessKey();
-
 int getchcon(int x, int y);
-
 void waitanykey();
 
- 
-
 struct tag_Point {
-
      int x,y;
-
 };
 
 tag_Point snake[QS];
-
 tag_Point now;
-
 int head,tail;
-
 int inctail;
-
 enum tag_Dir { LEFT=75, RIGHT=77, UP=72, DOWN=80 };
-
 tag_Dir dir;
-
 int life;
-
 int maxnumber;
 
 int speed;
