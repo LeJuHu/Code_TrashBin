@@ -110,8 +110,6 @@ void main()
 
 }
 
- 
-
 // 스테이지 초기화
 
 void InitStage(int stage)
@@ -225,8 +223,6 @@ void InitStage(int stage)
      }
 
 }
-
- 
 
 // 뱀을 이동시킨다. 죽었으면 TRUE를 리턴한다.
 
