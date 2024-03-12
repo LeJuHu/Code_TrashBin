@@ -38,5 +38,3 @@ git pull origin master
 
 5. 브렌치끼리 이동하는 법
 git checkout 브렌치 이름
-
-6. Githubtest
