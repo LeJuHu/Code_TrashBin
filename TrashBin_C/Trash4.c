@@ -93,17 +93,13 @@ void main()
           }
 
           if (number == maxnumber) {
-
               gotoxy(12,20);
-
               puts("축하합니다. 아무 키나 누르시면 다음 스테이지로 갑니다.");
 
               waitanykey();
 
               stage++;
-
           }
-
      }
 
 }
