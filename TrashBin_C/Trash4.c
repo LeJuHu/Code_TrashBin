@@ -52,8 +52,6 @@ void main()
 
                 gotoxy(x,y);printf("%d",random(9)+1);
 
-
-
                 // 게임 시작 직후이면 잠시 대기하며 스테이지 조정 기회를 준다
 
                 if (number == 0) {
