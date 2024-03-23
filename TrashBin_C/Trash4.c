@@ -112,23 +112,16 @@ void InitStage(int stage)
      clrscr();
 
      snake[0].x=5;snake[0].y=5;
-
      snake[1].x=6;snake[1].y=5;
-
      snake[2].x=7;snake[2].y=5;
 
      gotoxy(5,5);puts("##S");
 
      head=2;
-
      tail=0;
-
      inctail=0;
-
      now.x=7;
-
      now.y=5;
-
      dir=RIGHT;
 
  
