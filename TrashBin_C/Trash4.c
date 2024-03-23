@@ -124,24 +124,17 @@ void InitStage(int stage)
      now.y=5;
      dir=RIGHT;
 
- 
-
      // 바깥의 벽을 그린다.
-
      for (i=0;i<80;i++) {
-
           putchxy(i,0,'M');
 
           putchxy(i,22,'M');
-
      }
 
      for (i=0;i<23;i++) {
-
           putchxy(0,i,'M');
 
           putchxy(79,i,'M');
-
      }
 
  
