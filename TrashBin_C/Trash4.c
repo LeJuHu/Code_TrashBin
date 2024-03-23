@@ -156,21 +156,16 @@ void InitStage(int stage)
           maxnumber=20;speed=60;multi=7;
 
           for (i=20;i<60;i++) {
-
               if (i < 30 || i > 50) {
-
                    putchxy(i,7,'M');
-
                    putchxy(i,14,'M');
-
               }
-
           }
 
-          for (i=7;i<15;i++) { putchxy(20,i,'M'); putchxy(60,i,'M'); }
-
+          for (i=7;i<15;i++) { 
+               putchxy(20,i,'M'); putchxy(60,i,'M'); 
+          }
           break;
-
      case 4:
 
           maxnumber=1970;speed=50;multi=9;
