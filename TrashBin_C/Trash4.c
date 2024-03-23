@@ -137,40 +137,22 @@ void InitStage(int stage)
           putchxy(79,i,'M');
      }
 
- 
-
      // 스테이지별로 장애물을 적당히 그리고 난이도를 조절한다.
-
      switch (stage) {
-
      case 0:
-
           maxnumber=5;speed=150;multi=3;
-
           for (i=30;i<=50;i++) { putchxy(i,11,'M'); }
-
           break;
-
      case 1:
-
           maxnumber=10;speed=100;multi=5;
-
           for (i=20;i<=60;i++) { putchxy(i,7,'M'); putchxy(i,14,'M'); }
-
           break;
-
      case 2:
-
           maxnumber=15;speed=80;multi=6;
-
           for (i=20;i<60;i++) { putchxy(i,11,'M'); }
-
           for (i=6;i<=16;i++) { putchxy(40,i,'M'); }
-
           break;
-
      case 3:
-
           maxnumber=20;speed=60;multi=7;
 
           for (i=20;i<60;i++) {
