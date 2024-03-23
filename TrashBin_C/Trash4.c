@@ -167,28 +167,17 @@ void InitStage(int stage)
           }
           break;
      case 4:
-
           maxnumber=1970;speed=50;multi=9;
-
           break;
-
      }
-
 }
 
 // 뱀을 이동시킨다. 죽었으면 TRUE를 리턴한다.
-
 BOOL MoveSnake()
-
 {
-
      int headch;
-
      int len;
-
      int prev;
-
- 
 
      for (;;) {
 
