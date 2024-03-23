@@ -101,18 +101,13 @@ void main()
               stage++;
           }
      }
-
 }
 
 // 스테이지 초기화
 
 void InitStage(int stage)
-
 {
-
      int i;
-
- 
 
      clrscr();
 
