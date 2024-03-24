@@ -230,29 +230,21 @@ BOOL MoveSnake()
           // 머리를 그리기 전에 머리 위치의 문자를 미리 읽어 놓아야 한다.
 
           headch=getchcon(now.x,now.y);
-
           putchxy(snake[head].x,snake[head].y,'S');
 
           prev=(head == 0 ? QS-1:head-1);
-
           putchxy(snake[prev].x,snake[prev].y,'#');
 
           prev=(tail == 0 ? QS-1:tail-1);
-
           putchxy(snake[prev].x,snake[prev].y,' ');
-
- 
 
           // 현재 위치가 공백이 아니면 어딘가에 부딪힌 것임
 
           if (headch != ' ') {
-
               break;
-
           }
 
           delay(speed);
-
      }
 
  
@@ -260,17 +252,13 @@ BOOL MoveSnake()
      // 벽이나 자기 꼬리에 부딪쳤으면 죽은 것임
 
      if (headch == 'M' || headch == '#') {
-
           return TRUE;
-
      }
 
      // 먹은 숫자의 multi 배만큼 꼬리를 늘린다. 늘어나고 있는 중이라면 누적된다.
 
      inctail+=(headch-'0')*multi;
-
      return FALSE;
-
 }
 
  
@@ -278,78 +266,51 @@ BOOL MoveSnake()
 // 키 입력을 처리한다.
 
 void ProcessKey()
-
 {
-
      int ch;
 
- 
-
      if (!kbhit()) {
-
           return;
-
      }
 
      ch=getch();
 
      if (ch == 0xE0 || ch == 0) {
-
           ch=getch();
-
           switch (ch) {
 
           case LEFT:
-
               // 진행 반대 방향으로는 전환할 수 없다.
 
               if (dir != RIGHT) dir=LEFT;
-
               break;
 
           case RIGHT:
-
               if (dir != LEFT) dir=RIGHT;
-
               break;
 
           case UP:
-
               if (dir != DOWN) dir=UP;
-
               break;
 
           case DOWN:
-
               if (dir != UP) dir=DOWN;
-
               break;
-
           }
 
-     } else {
-
+     } 
+     else {
           switch (tolower(ch)) {
-
           case 27:
-
               setcursortype(NORMALCURSOR);
-
               exit(0);
 
           case ' ':
-
               waitanykey();
-
               break;
-
           }
-
      }
-
 }
-
- 
 
 // 화면의 x,y위치에 있는 문자를 조사한다.
 
