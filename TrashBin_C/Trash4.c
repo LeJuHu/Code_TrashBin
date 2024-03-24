@@ -328,8 +328,6 @@ int getchcon(int x, int y)
 
      DWORD dwRead;
 
- 
-
      ReadConsoleOutputCharacter(GetStdHandle(STD_OUTPUT_HANDLE),
 
           &Char,1,Cur,&dwRead);
