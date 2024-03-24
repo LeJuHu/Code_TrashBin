@@ -331,21 +331,13 @@ int getchcon(int x, int y)
 }
 
 // 임의의 키 하나가 눌러질 때까지 대기한다.
-
 void waitanykey()
-
 {
-
      int ch;
-
- 
 
      ch=getch();
 
      if (ch==0xE0 || ch==0) {
-
           getch();
-
      }
-
 }
