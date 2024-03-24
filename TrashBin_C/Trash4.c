@@ -317,26 +317,18 @@ void ProcessKey()
 int getchcon(int x, int y)
 
 {
-
      COORD Cur;
 
      Cur.X=x;
-
      Cur.Y=y;
 
      TCHAR Char;
-
      DWORD dwRead;
 
      ReadConsoleOutputCharacter(GetStdHandle(STD_OUTPUT_HANDLE),
-
           &Char,1,Cur,&dwRead);
-
      return Char;
-
 }
-
- 
 
 // 임의의 키 하나가 눌러질 때까지 대기한다.
 
