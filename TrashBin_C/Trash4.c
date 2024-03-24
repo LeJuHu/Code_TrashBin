@@ -180,45 +180,33 @@ BOOL MoveSnake()
      int prev;
 
      for (;;) {
-
           gotoxy(60,23);
 
           len=head-tail;
 
-          if (len < 0) len+=QS;
-
+          if (len < 0) {    
+               len+=QS;
+          }
           printf("꼬리 길이 : %d ",len);
 
           ProcessKey();
 
- 
-
           switch (dir) {
-
           case LEFT:
-
               now.x--;
-
               break;
 
           case RIGHT:
-
               now.x++;
-
               break;
 
           case UP:
-
               now.y--;
-
               break;
 
           case DOWN:
-
               now.y++;
-
               break;
-
           }
 
  
