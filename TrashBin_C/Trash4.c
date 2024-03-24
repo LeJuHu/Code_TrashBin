@@ -143,15 +143,18 @@ void InitStage(int stage)
           maxnumber=5;speed=150;multi=3;
           for (i=30;i<=50;i++) { putchxy(i,11,'M'); }
           break;
+
      case 1:
           maxnumber=10;speed=100;multi=5;
           for (i=20;i<=60;i++) { putchxy(i,7,'M'); putchxy(i,14,'M'); }
           break;
+
      case 2:
           maxnumber=15;speed=80;multi=6;
           for (i=20;i<60;i++) { putchxy(i,11,'M'); }
           for (i=6;i<=16;i++) { putchxy(40,i,'M'); }
           break;
+
      case 3:
           maxnumber=20;speed=60;multi=7;
 
@@ -166,6 +169,7 @@ void InitStage(int stage)
                putchxy(20,i,'M'); putchxy(60,i,'M'); 
           }
           break;
+
      case 4:
           maxnumber=1970;speed=50;multi=9;
           break;
@@ -209,15 +213,11 @@ BOOL MoveSnake()
               break;
           }
 
- 
-
           // 머리 한칸 진행
 
           head=(head == QS-1 ? 0:head+1);
 
           snake[head]=now;
-
- 
 
           // 꼬리 한칸 진행. 단 늘어나고 있는 중이면 그 자리에 있는다.
 
