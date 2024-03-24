@@ -216,22 +216,16 @@ BOOL MoveSnake()
           // 머리 한칸 진행
 
           head=(head == QS-1 ? 0:head+1);
-
           snake[head]=now;
 
           // 꼬리 한칸 진행. 단 늘어나고 있는 중이면 그 자리에 있는다.
 
           if (inctail == 0) {
-
               tail=(tail == QS-1 ? 0:tail+1);
-
-          } else {
-
+          } 
+          else {
               inctail--;
-
           }
-
- 
 
           // 머리를 그리기 전에 머리 위치의 문자를 미리 읽어 놓아야 한다.
 
